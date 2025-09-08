@@ -23,17 +23,20 @@ margin-bottom: 2rem;
 }
 
 .btn {
-display: inline-block;
-padding: 0.7rem 1.5rem;
-background: #0073e6;
-color: white;
-text-decoration: none;
-border-radius: 5px;
-transition: background 0.3s ease;
-}
-.btn:hover {
-background: #005bb5;
-}
+    display: inline-block;      /* ensures padding works properly */
+    padding: 12px 30px;         /* adjust height and width */
+    background-color: #007BFF;  /* button color */
+    color: white;               /* text color */
+    text-decoration: none;      /* remove underline */
+    border-radius: 50px;        /* makes the ends fully rounded */
+    font-weight: bold;
+    transition: background-color 0.3s;
+  }
+  
+  .btn:hover {
+    background-color: #0056b3;
+  }
+  
 
 section {
 padding: 3rem 2rem;
