@@ -3,13 +3,14 @@ body {
     margin: 0;
     padding: 0;
     line-height: 1.6;
-    color: #333;
+    color: #f4f4f4;
+    background-color: #3771f4;
   }
   
 header {
 text-align: center;
 padding: 8rem 2rem;
-background: #f4f4f4;
+background: #3771f4;
 }
 
 header h1 {
@@ -25,7 +26,7 @@ margin-bottom: 2rem;
 .btn {
     display: inline-block;      /* ensures padding works properly */
     padding: 12px 30px;         /* adjust height and width */
-    background-color: #007BFF;  /* button color */
+    background-color: #1b07d7;  /* button color */
     color: white;               /* text color */
     text-decoration: none;      /* remove underline */
     border-radius: 50px;        /* makes the ends fully rounded */
@@ -34,7 +35,7 @@ margin-bottom: 2rem;
   }
   
   .btn:hover {
-    background-color: #0056b3;
+    background-color: #1606ac;
   }
   
 
