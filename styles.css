@@ -19,14 +19,14 @@ body {
   
 header {
     text-align: center;
-    padding: 4rem 2rem;
+    padding: 4rem 1.5rem;
     background: var(--primary);
     color: var(--text-dark);
   }
 
 header h1 {
-    font-size: 4.5rem;
-    margin-bottom: 1rem;
+    font-size: 4rem;
+    margin-bottom: .8rem;
   }
 
 header p {
@@ -66,11 +66,11 @@ h2 {
     font-weight: normal;
   }
 
-    /* Projects Grid */
+    /* Projects List */
 .projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
   }
 
 .project-card {
@@ -128,9 +128,35 @@ h2 {
 
     /* References */
 .refs {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 1rem;
+  }
+
+.ref-item {
+    background: #f7f7f7;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
     text-align: center;
     font-style: italic;
   }
+
+@media (max-width: 768px) {
+.refs {
+    display: flex;
+    overflow-x: auto;
+    gap: 1rem;
+    padding: 0.5rem 0;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+.ref-item {
+    flex: 0 0 280px;
+    scroll-snap-align: start;
+  }
+}
 .hero {
     display: flex;
     flex-direction: column;   /* stack on mobile */
