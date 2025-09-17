@@ -13,7 +13,7 @@ body {
     margin: 0;
     padding: 0;
     line-height: 1.6;
-    color: var(--text-light);
+    color: var(--text-dark);
     background-color: var(--primary);
   }
   
@@ -139,6 +139,8 @@ h2 {
     border-radius: 12px;
     box-shadow: 0 6px 20px rgba(0,0,0,0.12);
     padding: 2rem;                        /* card padding */
+    max-width: 1000px;                    /* match section width */
+    margin: 0 auto;                       /* center like sections */
   }
 
 .profile-pic {
