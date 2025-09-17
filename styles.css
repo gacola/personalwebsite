@@ -13,7 +13,7 @@ body {
     margin: 0;
     padding: 0;
     line-height: 1.6;
-    color: var(--text-dark);
+    color: var(--text-light);
     background-color: var(--primary);
   }
   
@@ -21,6 +21,7 @@ header {
     text-align: center;
     padding: 4rem 2rem;
     background: var(--primary);
+    color: var(--text-dark);
   }
 
 header h1 {
@@ -153,15 +154,13 @@ h2 {
         flex-direction: row;
         justify-content: flex-start;
         text-align: left;
-        align-items: flex-start;
-        padding-left: 2rem;
+        align-items: center;
   }
 .intro {
-        max-width: 600px;
         display: flex;
         flex-direction: column;
         justify-content: center;
-        margin-left: 1rem;
+        width: 100%;
   }
   }
 
