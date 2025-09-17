@@ -52,6 +52,39 @@ header p {
 .btn:hover {
         background-color: var(--secondary-dark);
   }
+
+/* Social Media Icons */
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.social-icon {
+    transition: transform 0.2s ease, opacity 0.2s ease;
+    filter: grayscale(100%) opacity(0.7);
+}
+
+.github-icon,
+.linkedin-icon {
+    width: 32px;
+    height: 32px;
+}
+
+.gmail-icon {
+    width: 40px;
+    height: 32px;
+}
+
+.social-icon:hover {
+    transform: scale(1.1);
+    filter: grayscale(0%) opacity(1);
+}
+
+.social-links a {
+    text-decoration: none;
+}
     
 
 section {
@@ -197,6 +230,10 @@ h2 {
   }
 
 .intro .btn {
+    align-self: center;
+  }
+
+.intro .social-links {
     align-self: center;
   }
   }
