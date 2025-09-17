@@ -34,14 +34,17 @@ header p {
   }
 
 .btn {
-        display: inline-block;      /* ensures padding works properly */
-        padding: 12px 30px;         /* adjust height and width */
+        display: inline-flex;      /* allows centering */
+        align-items: center;
+        justify-content: center;
+        padding: 8px 18px;         /* reduced size to ~50% overall area */
         background-color: var(--secondary);  /* button color */
         color: white;               /* text color */
         text-decoration: none;      /* remove underline */
         border-radius: 50px;        /* makes the ends fully rounded */
         font-weight: bold;
         transition: background-color 0.3s;
+        min-width: 150px;           /* keep it tidy */
   }
     
 .btn:hover {
@@ -132,15 +135,14 @@ h2 {
     flex-direction: column;   /* stack on mobile */
     align-items: center;
     gap: 2rem;
+    background: #f7f7f7;                 /* off-white card */
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+    padding: 2rem;                        /* card padding */
   }
 
 .profile-pic {
-    width: 240px;
-    height: 240px;
-    object-fit: cover;
-    border-radius: 50%;   /* circular photo */
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-    margin-right: 2rem;
+    display: none; /* temporarily hide image */
   }
 
     /* For larger screens, put text beside photo */
