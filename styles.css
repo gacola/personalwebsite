@@ -36,17 +36,17 @@ header p {
   }
 
 .btn {
-        display: inline-flex;      /* allows centering */
+        display: inline-flex !important;      /* allows centering */
         align-items: center;
         justify-content: center;
-        padding: 8px 18px;         /* reduced size to ~50% overall area */
+        width: 220px !important;              /* force specific width */
+        padding: 8px 12px;         /* reduced padding */
         background-color: var(--secondary);  /* button color */
         color: white;               /* text color */
         text-decoration: none;      /* remove underline */
         border-radius: 50px;        /* makes the ends fully rounded */
         font-weight: bold;
         transition: background-color 0.3s;
-        min-width: 150px;           /* keep it tidy */
   }
     
 .btn:hover {
@@ -189,10 +189,15 @@ h2 {
         align-items: center;
   }
 .intro {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+  }
+
+.intro .btn {
+    align-self: center;
   }
   }
 
