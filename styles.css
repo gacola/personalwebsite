@@ -172,7 +172,7 @@ footer {
   }
 
 footer h2 {
-    font-size: 1rem;
+    font-size: 0.8rem;
     margin-bottom: 0.5rem;
   }
 
@@ -190,19 +190,19 @@ footer li {
 footer a {
     color: #fff !important;
     text-decoration: none;
-    font-weight: bold;
+    /* font-weight: bold; */
     }
 
 footer a:hover {
       text-decoration: underline;
-    color: #1b07d7; /* your accent color */
+    /* color: #1b07d7; /* your accent color */
     }
 
   
 footer p {
     font-size: 0.7rem;
     opacity: 0.7;
-    margin-top: 0.5rem;
+    margin-top: 0.25rem;
     }
 
 /* Intro slide-in and fade-in animation */
