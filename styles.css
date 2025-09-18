@@ -19,20 +19,21 @@ body {
   
 header {
     text-align: center;
-    padding: 4rem 1.5rem;
+    padding: 4rem 1.5rem 3rem 1.5rem;
     background: var(--primary);
     color: var(--text-dark);
   }
 
 header h1 {
     font-size: 4rem;
-    margin-top: 0.5rem;
-    margin-bottom: 0.6rem;
+    margin-top: 0.1rem;
+    margin-bottom: 0.1rem;
   }
 
 header p {
     font-size: 1.8rem;
-    margin-bottom: 2rem;
+    margin-bottom: 4rem;
+    line-height: 1.2;
   }
 
 .btn {
@@ -90,7 +91,7 @@ header p {
     
 
 section {
-    padding: 1.5rem 2rem;
+    padding: 0.5rem 2rem 1.5rem 2rem;
     max-width: 1000px;
     margin: auto;
   }
@@ -212,8 +213,8 @@ h2 {
     background: #f7f7f7;                 /* off-white card */
     border-radius: 12px;
     box-shadow: 0 6px 20px rgba(0,0,0,0.12);
-    padding: 2rem;                        /* card padding */
-    max-width: 1000px;                    /* match section width */
+    padding: 4rem;                        /* doubled card padding */
+    max-width: 900px;                    /* match section width */
     margin: 0 auto;                       /* center like sections */
     width: calc(100% - 4rem);             /* match section padding */
   }
@@ -250,9 +251,9 @@ h2 {
 footer {
     background-color: #273962;   /* dark footer */
     color: #fff;              /* light text */
-    padding: 1rem;
+    padding: 2rem;
     text-align: center;
-    margin-top: 1.5rem;         /* separates from content */
+    margin-top: 2rem;         /* separates from content */
   }
 
 footer h2 {
