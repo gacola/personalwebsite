@@ -15,9 +15,9 @@
                 <h1>Hello, I’m Gavin</h1>
                 <p>B.S. in Biomolecular Engineering and Bioinformatics<br>
                 University of California, Santa Cruz</p>
-                <a href="resume.pdf" class="btn">Download Resume</a>
+                <a href="resume.pdf" class="btn" target="_blank" rel="noopener noreferrer">Download Resume</a>
                 <div class="social-links">
-                    <a href="mailto:gavin.cola@gmail.com">
+                    <a href="#" onclick="copyEmail(event)">
                         <img src="gmail-icon.png" alt="Email" class="social-icon gmail-icon">
                     </a>
                     <a href="https://linkedin.com/in/gavincoladonato" target="_blank" rel="noopener noreferrer">
@@ -115,13 +115,76 @@
 <!-- Footer Section -->
 <footer id="contact">
     <ul>
-      <li><a href="mailto:gavin.cola@gmail.com">Email</a></li>
-      <li><a href="https://linkedin.com/gavincoladonato">LinkedIn</a></li>
-      <li><a href="https://github.com/gacola">Github</a></li>
-      <li><a href="resume.pdf">Resume</a></li>
+      <li><a href="#" onclick="copyEmail(event)">Email</a></li>
+      <li><a href="https://linkedin.com/in/gavincoladonato" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+      <li><a href="https://github.com/gacola" target="_blank" rel="noopener noreferrer">Github</a></li>
+      <li><a href="resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a></li>
     </ul>
     <p>&copy; 2025 Gavin Coladonato. All rights reserved.</p>
   </footer>
+
+  <!-- Email copy tooltip -->
+  <div id="email-tooltip" class="email-tooltip">Email copied!</div>
+
+  <script>
+    function copyEmail(event) {
+      event.preventDefault();
+      const email = 'gavin.cola@gmail.com';
+      
+      // Copy to clipboard
+      navigator.clipboard.writeText(email).then(function() {
+        showTooltip(event.target);
+      }).catch(function(err) {
+        // Fallback for older browsers
+        const textArea = document.createElement('textarea');
+        textArea.value = email;
+        document.body.appendChild(textArea);
+        textArea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textArea);
+        
+        showTooltip(event.target);
+      });
+    }
+    
+    function showTooltip(element) {
+      const tooltip = document.getElementById('email-tooltip');
+      
+      // Show tooltip
+      tooltip.style.display = 'block';
+      tooltip.style.opacity = '1';
+      
+      // Function to update tooltip position
+      function updatePosition() {
+        const rect = element.getBoundingClientRect();
+        tooltip.style.position = 'fixed';
+        tooltip.style.top = (rect.top - 40) + 'px';
+        tooltip.style.left = (rect.left + rect.width / 2) + 'px';
+        tooltip.style.transform = 'translateX(-50%)';
+      }
+      
+      // Initial position
+      updatePosition();
+      
+      // Update position on scroll
+      const scrollHandler = function() {
+        updatePosition();
+      };
+      
+      // Add scroll listener
+      window.addEventListener('scroll', scrollHandler);
+      
+      // Hide tooltip after 800ms
+      setTimeout(function() {
+        tooltip.style.opacity = '0';
+        setTimeout(function() {
+          tooltip.style.display = 'none';
+          // Remove scroll listener when tooltip is hidden
+          window.removeEventListener('scroll', scrollHandler);
+        }, 300);
+      }, 800);
+    }
+  </script>
 
 </body>
 </html>
