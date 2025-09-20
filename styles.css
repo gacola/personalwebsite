@@ -94,6 +94,8 @@ section {
     padding: 0.5rem 2rem 1.5rem 2rem;
     max-width: 1000px;
     margin: auto;
+    opacity: 0;
+    animation: contentFadeIn 0.8s ease-out 1.6s forwards;
   }
 
 h2 {
@@ -219,7 +221,10 @@ h2 {
     padding: 4rem;                        /* doubled card padding */
     max-width: 900px;                    /* match section width */
     margin: 0 auto;                       /* center like sections */
-    width: calc(100% - 4rem);             /* match section padding */
+    width: calc(100% - 4rem);
+    opacity: 0;
+    transform: translateX(20px);
+    animation: heroSlideIn 1s ease-out 0.1s forwards;
   }
 
 .profile-pic {
@@ -293,11 +298,11 @@ footer p {
     margin-top: 0.25rem;
     }
 
-/* Intro slide-in and fade-in animation */
-@keyframes introSlideFade {
+/* Hero card slide-in animation */
+@keyframes heroSlideIn {
   from {
     opacity: 0;
-    transform: translateX(15px);
+    transform: translateX(20px);
   }
   to {
     opacity: 1;
@@ -305,16 +310,43 @@ footer p {
   }
 }
 
+/* Intro fade-in animation */
+@keyframes introFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Content fade-in animation */
+@keyframes contentFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 .intro {
   opacity: 0;
-  transform: translateX(15px);
-  animation: introSlideFade 0.6s ease-out 0.15s forwards;
+  animation: introFadeIn 0.8s ease-out 0.1s forwards;
 }
 
 @media (prefers-reduced-motion: reduce) {
-.intro {
+.hero {
     animation: none;
     opacity: 1;
     transform: none;
+  }
+.intro {
+    animation: none;
+    opacity: 1;
+  }
+section {
+    animation: none;
+    opacity: 1;
   }
 }
