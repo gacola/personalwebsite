@@ -237,9 +237,9 @@ h2 {
 
 
 .project-card img {
-    width: 100%;
+    width: 40%;
     display: block;
-    border-radius: 10px;
+    /*border-radius: 10px;*/
   }
 
 .project-card h3, 
