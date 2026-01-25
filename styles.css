@@ -1,11 +1,97 @@
 
 :root {
     --primary: #3771f4;
-    --secondary: #1b07d7;
-    --secondary-dark: #1606ac;
+    /*--secondary: #1b07d7;*/
+    --secondary: #0c1d64;
+    /*--secondary-dark: #1606ac;*/
     --text-light: #f4f4f4;
     --text-dark: #333;
   }
+
+/* Navigation Bar */
+.navbar {
+  background-color: var(--primary);
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+
+.nav-logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+
+.nav-logo:hover {
+  opacity: 0.8;
+}
+
+.nav-logo img {
+  height: 40px;  /* Increased from 40px - adjust this value as needed */
+  width: auto;
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-menu li {
+  display: inline-block;
+}
+
+.nav-menu a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: opacity 0.3s ease;
+}
+
+.nav-menu a:hover {
+  opacity: 0.7;
+}
+
+/* Mobile Navigation */
+@media (max-width: 768px) {
+  .nav-container {
+    padding: 1rem;
+  }
+  
+  .nav-logo {
+    font-size: 1.2rem;
+  }
+  
+  .nav-menu {
+    gap: 1rem;
+  }
+  
+  .nav-menu a {
+    font-size: 0.9rem;
+  }
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 60px;
+}
   
 
 body {
@@ -19,7 +105,7 @@ body {
   
 header {
     text-align: center;
-    padding: 4rem 1.5rem 3rem 1.5rem;
+    padding: 2.25rem 1.5rem 3rem 1.5rem;
     background: var(--primary);
     color: var(--text-dark);
   }
@@ -158,15 +244,10 @@ header p {
 .github-icon,
 .linkedin-icon,
 .gmail-icon {
-    width: 32px;
-    height: 32px;
+    width: 48px;
+    height: 48px;
 }
 
-/*
-.gmail-icon {
-    width: 40px;
-    height: 32px;
-}*/
 
 .social-icon:hover {
     transform: scale(1.1);
@@ -217,8 +298,8 @@ section {
 h2 {
     text-align: left;
     margin-bottom: 1.5rem;
-    font-size: 1.2rem;
-    font-weight: normal;
+    font-size: 1.6rem;
+    font-weight: bold;
   }
 
     /* Projects List */
@@ -334,7 +415,7 @@ h2 {
     background: #f7f7f7;                 /* off-white card */
     border-radius: 12px;
     box-shadow: 0 6px 20px rgba(0,0,0,0.12);
-    padding: 4rem;                        /* doubled card padding */
+    padding: 3rem;                        /* doubled card padding */
     max-width: min(900px, calc(100vw - 1rem)) !important; 
     margin: 0 auto;                       /* center the card */
     width: auto;
@@ -375,7 +456,7 @@ h2 {
 footer {
     background-color: #273962;   /* dark footer */
     color: #fff;              /* light text */
-    padding: 2rem;
+    padding: 1rem;
     text-align: center;
     margin-top: 2rem;         /* separates from content */
   }

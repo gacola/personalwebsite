@@ -3,14 +3,33 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gavin Coladonato | Personal Website</title>
+    <title>Gavin Coladonato</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="assets/favicon.png">
 </head>
 <body>
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="#home" class="nav-logo">
+        <!-- Option 1: Use text -->
+        <span>Gavin Coladonato</span>
+        <!-- Option 2: Use image (uncomment to use) -->
+        <!--<img src="assets/logo.png" alt="Home">-->
+      </a>
+      <ul class="nav-menu">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <!--<li><a href="#references">References</a></li>-->
+      </ul>
+    </div>
+  </nav>
+
   <!-- Header -->
-    <header>
+    <header id="home">
         <div class="hero">
-            <!--<img src="me.jpeg" alt="Gavin Coladonato" class="profile-pic">-->
+            <!--<img src="assets/me.jpeg" alt="Gavin Coladonato" class="profile-pic">-->
             <div class="intro">
                 <h1>Hello, I’m Gavin</h1>
                 <p>B.S. in Biomolecular Engineering and Bioinformatics<br>
@@ -32,14 +51,14 @@
     </header>
   
 
-<!-- Projects Section -->
-<section id="projects">
-  <h2>Work I've Done:</h2>
+<!-- Experience Section -->
+<section id="experience">
+  <h2>Roles I've held</I>:</h2>
   <div class="projects-grid">
 
     <!-- Stanford RSL -->
     <div class="project-card">
-      <img src="assets/stanford_rsl.jpg" alt="Stanford RSL Project">
+      <img src="assets/stanford_rsl_bordered.jpg" alt="Stanford RSL Project">
       <h3>Undergraduate Research Intern – Stanford Medicine, Radiological Sciences Laboratory (RSL)</h3>
       <p>PyTorch, NumPy, Multilayer Perceptrons (MLPs), Diffusion Tensor MRI</p>
       <div class="project-overlay">
@@ -55,7 +74,7 @@
 
     <!-- Deep Learning Research Assistant -->
     <div class="project-card">
-      <img src="assets/snn_research.jpg" alt="Spiking Neural Networks Research">
+      <img src="assets/ucsc_be_bordered.jpg" alt="Spiking Neural Networks Research">
       <h3>Deep Learning Research Assistant – Neuromorphic Computing Group</h3>
       <p>Python, PyTorch, Spiking Neural Networks (SNNs)</p>
       <div class="project-overlay">
@@ -67,29 +86,54 @@
         <!-- <a href="#">View Project</a> -->
       </div>
     </div>
-
-    <!-- Polycythemia Vera Analysis -->
-    <div class="project-card">
-      <img src="assets/pv_analysis.jpg" alt="Polycythemia Vera Analysis">
-      <h3>Computational Analysis of Polycythemia Vera Driver Mutation</h3>
-      <p>Gene expression analysis, Pathway enrichment, Machine learning, Network modeling</p>
-      <div class="project-overlay">
-        <ul>
-          <li>Developed a computational pipeline to confirm JAK2 V617F as the primary driver mutation in Polycythemia Vera.</li>
-          <li>Integrated gene expression analysis, pathway enrichment, and machine learning classification.</li>
-          <li>Conducted differential gene expression studies using publicly available genomic datasets (GEO, TCGA, COSMIC).</li>
-          <li>Built and analyzed network models to investigate biological pathways and mutation effects.</li>
-        </ul>
-        <!-- <a href="#">View Project</a> -->
-      </div>
-    </div>
-
   </div>
 </section>
 
   
-  <!-- References/Experience (Optional) -->
-  <!--
+  <!-- Projects -->
+  <section id="projects">
+    <h2>Work I've Done:</h2>
+    <div class="projects-grid">
+      <!-- Polycythemia Vera Analysis -->
+      <div class="project-card">
+        <img src="assets/ucsc_be_bordered.jpg" alt="Polycythemia Vera Analysis">
+        <h3>Computational Analysis of Polycythemia Vera Driver Mutation</h3>
+        <p>Gene expression analysis, Pathway enrichment, Machine learning, Network modeling</p>
+        <div class="project-overlay">
+          <ul>
+            <li>Developed a computational pipeline to confirm JAK2 V617F as the primary driver mutation in Polycythemia Vera.</li>
+            <li>Integrated gene expression analysis, pathway enrichment, and machine learning classification.</li>
+            <li>Conducted differential gene expression studies using publicly available genomic datasets (GEO, TCGA, COSMIC).</li>
+            <li>Built and analyzed network models to investigate biological pathways and mutation effects.</li>
+          </ul>
+          <!-- <a href="#">View Project</a> -->
+        </div>
+      </div>
+  
+      <div class="project-card">
+        <img src="assets/ucsc_be_bordered.jpg" alt="Polycythemia Vera Analysis">
+        <h3>Computational Analysis of Polycythemia Vera Driver Mutation</h3>
+        <p>Gene expression analysis, Pathway enrichment, Machine learning, Network modeling</p>
+        <div class="project-overlay">
+          <ul>
+            <li>Developed a computational pipeline to confirm JAK2 V617F as the primary driver mutation in Polycythemia Vera.</li>
+            <li>Integrated gene expression analysis, pathway enrichment, and machine learning classification.</li>
+            <li>Conducted differential gene expression studies using publicly available genomic datasets (GEO, TCGA, COSMIC).</li>
+            <li>Built and analyzed network models to investigate biological pathways and mutation effects.</li>
+          </ul>
+          <!-- <a href="#">View Project</a> -->
+        </div>
+      </div>
+
+
+
+    </div>
+  </section>
+
+
+  <!-- References section -->
+
+<!--
   <section id="references">
     <h2>References:</h2>
     <div class="refs">
@@ -110,7 +154,8 @@
       </div>
     </div>
   </section>
-  -->
+
+-->
 
 <!-- Footer Section -->
 <footer id="contact">
