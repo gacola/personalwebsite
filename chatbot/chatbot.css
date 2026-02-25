@@ -28,8 +28,8 @@
 /* ─── Toggle Button ─── */
 .chatbot-toggle {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
+  bottom: 40px;
+  right: 40px;
   width: 56px;
   height: 56px;
   border-radius: var(--chat-radius-button);
@@ -92,8 +92,8 @@
 /* ─── Chat Panel ─── */
 .chatbot-panel {
   position: fixed;
-  bottom: 90px;
-  right: 20px;
+  bottom: 110px;
+  right: 40px;
   width: var(--chat-width);
   height: var(--chat-height);
   background: var(--chat-bg);
@@ -137,13 +137,7 @@
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  background: var(--chat-accent);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 16px;
-  font-weight: bold;
-  color: var(--chat-bg);
+  object-fit: cover;
 }
 
 .chatbot-header-text h3 {
@@ -278,19 +272,16 @@
   width: 28px;
   height: 28px;
   border-radius: 50%;
-  background: var(--chat-accent);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 12px;
-  font-weight: bold;
-  color: var(--chat-bg);
+  object-fit: cover;
   flex-shrink: 0;
 }
 
-.chatbot-message.user .chatbot-message-avatar {
+div.chatbot-message-avatar {
   background: var(--chat-bubble-user);
-  color: var(--chat-text-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
 }
 
 .chatbot-message-content {

@@ -35,7 +35,7 @@
                 <h1>Hello, I’m Gavin</h1>
                 <p>B.S. in Biomolecular Engineering and Bioinformatics<br>
                 University of California, Santa Cruz</p>
-                <a href="assets/resume.pdf" class="btn" target="_blank" rel="noopener noreferrer">Download Resume</a>
+                <a href="assets/resume.pdf" class="btn" target="_blank" rel="noopener noreferrer">View Resume</a>
                 <div class="social-links">
                     <a href="#" onclick="copyEmail(event)">
                         <img src="assets/gmail-icon.png" alt="Email" class="social-icon gmail-icon">
@@ -95,22 +95,177 @@
   <section id="projects">
     <h2>Work I've Done:</h2>
     <div class="projects-grid">
-      <!-- Polycythemia Vera Analysis -->
+
+      <!-- Project 1: DTI Reconstruction -->
       <div class="project-card">
-        <img src="assets/ucsc_be_bordered.jpg" alt="Polycythemia Vera Analysis">
-        <h3>Computational Analysis of Polycythemia Vera Driver Mutation</h3>
-        <p>Gene expression analysis, Pathway enrichment, Machine learning, Network modeling</p>
+        <!--<img src="assets/stanford_rsl_bordered.jpg" alt="DTI Reconstruction">-->
+        <h3>Accelerating DTI Reconstruction Using Implicit Neural Representations</h3>
+        <ul class="project-outcomes">
+          <li>Achieved a Dice Similarity Coefficient of 0.929 for 3D rectus femoris muscle shape reconstruction from MRI segmentation data, exceeding the 0.90 target.</li>
+          <li>Designed a custom multi-objective loss function (BCE + cosine similarity + MSE) to jointly train shape, diffusion direction, and scalar reconstruction from spatial coordinates.</li>
+          <li>Presented results as a research poster and final talk at Stanford Medicine, supervised by Drs. Gold and Chaudhari in the JOINT Lab.</li>
+        </ul>
+        <p>Skills: PyTorch, Neural Implicit Representations, Occupancy Networks, SIREN, SimpleITK</p>
         <div class="project-overlay">
-          <ul>
-            <li>Developed a computational pipeline to confirm JAK2 V617F as the primary driver mutation in Polycythemia Vera.</li>
-            <li>Integrated gene expression analysis, pathway enrichment, and machine learning classification.</li>
-            <li>Conducted differential gene expression studies using publicly available genomic datasets (GEO, TCGA, COSMIC).</li>
-            <li>Built and analyzed network models to investigate biological pathways and mutation effects.</li>
-          </ul>
-          <!-- <a href="#">View Project</a> -->
+          <p>Research conducted during a Stanford Medicine REU at the Radiological Sciences Laboratory, investigating whether neural implicit representations can accurately reconstruct muscle Diffusion Tensor Imaging data. The project developed a two-stage approach: first, a neural shape model (occupancy network) that learns to classify 3D coordinates as inside or outside a muscle segmentation, then a neural vector field that jointly predicts occupancy, principal diffusion direction, and diffusion scalars from spatial input. The occupancy network exceeded accuracy targets (DSC 0.929), while the vector field reconstruction revealed open challenges in capturing directional information — honest results that motivated ongoing work in the lab. Built end-to-end in PyTorch with SimpleITK for medical image I/O and custom SIREN-style architectures.</p>
+          <a href="https://github.com/gacola" target="_blank" rel="noopener noreferrer" class="project-link">
+            <img src="assets/github-icon.png" alt="GitHub">
+            <img src="assets/external-link-icon.png" alt="External link">
+          </a>
         </div>
       </div>
-  
+
+      <!-- Project 2: Heterotaxy -->
+      <div class="project-card">
+        <h3>Clinical Exome Variant Analysis Pipeline for Heterotaxy</h3>
+        <ul class="project-outcomes">
+          <li>Narrowed thousands of raw WES variants to a prioritized set of clinically relevant candidates through systematic MANE Select transcript filtering, gnomAD frequency thresholds (MAX_AF < 1%), and VEP HIGH/MODERATE impact selection.</li>
+          <li>Performed zygosity-stratified DNAH5 deep-dive with SIFT/PolyPhen functional prediction and ClinVar pathogenicity tiering across a curated panel of 25 heterotaxy-associated genes.</li>
+          <li>Processed multiple VEP-annotated TSVs in parallel, handling heterogeneous column schemas and generating direct ClinVar URLs for manual clinical review.</li>
+        </ul>
+        <p>Skills: VEP, gnomAD, ClinVar, SIFT, PolyPhen, MANE Select, Pandas</p>
+        <div class="project-overlay">
+          <p>A clinical variant filtering and prioritization pipeline for Whole Exome Sequencing data from a NICU heterotaxy patient. The pipeline processes VEP-annotated variant files through a systematic filtering cascade — transcript selection (MANE Select or canonical), population frequency filtering against gnomAD, functional impact assessment, and ClinVar pathogenicity tiering — to narrow thousands of raw variants to a manageable set of clinically actionable candidates. Includes deep interrogation of DNAH5 (a key ciliary gene in heterotaxy) with zygosity stratification and SIFT/PolyPhen scoring, plus screening against a curated panel of 25 heterotaxy-associated genes spanning ciliary, signaling, and emerging candidate categories. Developed for a real clinical case as a prototype for potential commercialization.</p>
+          <a href="https://github.com/gacola" target="_blank" rel="noopener noreferrer" class="project-link">
+            <img src="assets/github-icon.png" alt="GitHub">
+            <img src="assets/external-link-icon.png" alt="External link">
+          </a>
+        </div>
+      </div>
+
+      <!-- Project 3: Polycythemia Vera -->
+      <div class="project-card">
+        <!--<img src="assets/ucsc_be_bordered.jpg" alt="Polycythemia Vera">-->
+        <h3>Computational Validation of JAK2 V617F in Polycythemia Vera</h3>
+        <ul class="project-outcomes">
+          <li>Demonstrated strong JAK2-STAT co-expression (Spearman r = 0.81–0.84 for STAT2/5B/6) and SOCS/CISH feedback regulation, validating JAK2's functional centrality despite its absence from top differentially expressed genes.</li>
+          <li>Identified significant enrichment of cytokine signaling, cell cycle (NES = 1.68, FDR ≈ 0.01), and immune/inflammatory pathways through KEGG enrichment and pre-ranked GSEA on MPN patient data from GEO.</li>
+          <li>Authored a research paper and delivered a presentation on findings, including exploratory WGCNA with Topological Overlap Matrices and hub gene identification.</li>
+        </ul>
+        <p>Skills: Scanpy, GSEApy, Enrichr, WGCNA, NetworkX, AnnData</p>
+        <div class="project-overlay">
+          <p>A computational genomics research project investigating the role of the JAK2 V617F mutation as the primary driver of Polycythemia Vera, a rare myeloproliferative neoplasm. The pipeline integrates differential gene expression analysis, KEGG pathway enrichment, pre-ranked GSEA, and Spearman correlation matrices to build the case that JAK2 drives PV through constitutive protein-level activation rather than transcriptional upregulation — explaining why it doesn't appear among top differentially expressed genes. Analysis of MPN patient data from GEO reveals significant enrichment of immune/inflammatory and cell cycle pathways, with strong JAK2-STAT co-expression and active SOCS/CISH feedback. Includes exploratory WGCNA and course assignments covering Poisson/NB count modeling, doublet detection, and batch correction.</p>
+          <a href="https://github.com/gacola" target="_blank" rel="noopener noreferrer" class="project-link">
+            <img src="assets/github-icon.png" alt="GitHub">
+            <img src="assets/external-link-icon.png" alt="External link">
+          </a>
+        </div>
+      </div>
+
+      <!-- Project 4: Computational Biology Algorithms -->
+      <div class="project-card">
+        <!--<img src="assets/ucsc_be_bordered.jpg" alt="Computational Biology Algorithms">-->
+        <h3>Computational Biology Algorithms: From K-Means to Hidden Markov Models</h3>
+        <ul class="project-outcomes">
+          <li>Implemented a Hidden Markov Model with Viterbi decoding in log-space to detect runs of homozygosity from phased VCF genotype data, with biologically motivated transition and emission probabilities.</li>
+          <li>Built a genomic interval overlap permutation test using a two-pointer sweep algorithm across 10,000 iterations, computing observed overlap and empirical p-values from BED file inputs.</li>
+          <li>Applied NMF to dog genotype data to decompose population structure into K = 5 ancestry components, producing STRUCTURE-style stacked bar plots identifying dominant clusters per breed.</li>
+        </ul>
+        <p>Skills: K-means, PCA, MDS, NMF, Viterbi/HMM, Permutation Testing, NumPy</p>
+        <div class="project-overlay">
+          <p>Six core bioinformatics and machine learning algorithms implemented from first principles in Python and NumPy. Covers the full spectrum from unsupervised learning (K-means on MNIST digits, PCA/MDS for dimensionality reduction, NMF for population structure analysis on dog genotype data) to statistical genomics (permutation testing for interval overlaps, differential expression with log2 fold change) to probabilistic sequence models (HMM with Viterbi decoding for detecting runs of homozygosity from VCF data). Each implementation avoids library abstractions to demonstrate understanding of the underlying mathematics — eigendecomposition, log-space computation, convergence detection, and backtracking algorithms.</p>
+          <a href="https://github.com/gacola" target="_blank" rel="noopener noreferrer" class="project-link">
+            <img src="assets/github-icon.png" alt="GitHub">
+            <img src="assets/external-link-icon.png" alt="External link">
+          </a>
+        </div>
+      </div>
+
+      <!-- Project 5: MNIST -->
+      <div class="project-card">
+        <!--<img src="assets/ucsc_be_bordered.jpg" alt="MNIST Classification">-->
+        <h3>MNIST Digit Classification: Neural Network & Backpropagation from Scratch</h3>
+        <ul class="project-outcomes">
+          <li>Achieved 97.46% test accuracy on MNIST using a neural network built entirely from scratch in NumPy — no PyTorch, no TensorFlow, no autograd.</li>
+          <li>Implemented full forward propagation, backpropagation with chain rule gradient computation, softmax cross-entropy loss, mini-batch SGD, and learning rate scheduling.</li>
+          <li>Conducted systematic hyperparameter experiments across network depth (2–4 layers), width (128–512 neurons), learning rates, and batch sizes, documenting performance tradeoffs.</li>
+        </ul>
+        <p>Skills: Backpropagation, Softmax, Cross-Entropy, Mini-batch SGD, NumPy</p>
+        <div class="project-overlay">
+          <p>A complete multi-layer neural network implemented from scratch in NumPy, with every component hand-coded: forward propagation through ReLU-activated hidden layers, backpropagation via chain rule gradient computation, softmax output with cross-entropy loss, mini-batch stochastic gradient descent, and learning rate scheduling. No deep learning frameworks used — the goal was to understand exactly what happens inside a neural network during training. Systematic experiments across architectures (2–4 hidden layers, 128–512 neurons) and hyperparameters (learning rates, batch sizes) culminated in 97.46% test accuracy on the full MNIST dataset.</p>
+          <a href="https://github.com/gacola" target="_blank" rel="noopener noreferrer" class="project-link">
+            <img src="assets/github-icon.png" alt="GitHub">
+            <img src="assets/external-link-icon.png" alt="External link">
+          </a>
+        </div>
+      </div>
+
+      <!-- Project 6: Data Visualization -->
+      <div class="project-card">
+        <!--<img src="assets/ucsc_be_bordered.jpg" alt="Data Visualization">-->
+        <h3>Publication-Quality Data Visualization for Genomics & Bioinformatics</h3>
+        <ul class="project-outcomes">
+          <li>Built a genome browser from scratch in Matplotlib rendering gene models (GTF), read alignments (PSL), and per-base coverage histograms with greedy read-packing algorithms.</li>
+          <li>Implemented a beeswarm plot algorithm with collision detection from scratch — no library support — for visualizing PacBio subread identity vs. coverage.</li>
+          <li>Created information-theoretic sequence logos computing Shannon entropy and information content in bits at each position for 5′ and 3′ splice sites from FASTA data.</li>
+        </ul>
+        <p>Skills: Matplotlib, Sequence Logos, Beeswarm Plots, Genome Browser, GTF/PSL/FASTA</p>
+        <div class="project-overlay">
+          <p>A progressive portfolio of scientific visualizations built entirely in low-level Matplotlib — no seaborn, no plotly, no high-level wrappers. Each piece tackles a different bioinformatics visualization challenge: scatter plots with marginal histograms for gene expression, t-SNE cell-type clustering, beeswarm plots with custom collision detection, information-theoretic sequence logos, circadian expression heatmaps, and a full genome browser with gene model rendering (GTF), read alignment packing (PSL), and per-base coverage histograms. Demonstrates the ability to produce figures that meet journal publication standards with precise multi-panel layouts, custom color maps, and domain-specific plot types.</p>
+          <a href="https://github.com/gacola" target="_blank" rel="noopener noreferrer" class="project-link">
+            <img src="assets/github-icon.png" alt="GitHub">
+            <img src="assets/external-link-icon.png" alt="External link">
+          </a>
+        </div>
+      </div>
+
+      <!-- Project 7: Bioinformatics Programming -->
+      <div class="project-card">
+        <!--<img src="assets/ucsc_be_bordered.jpg" alt="Bioinformatics Programming">-->
+        <h3>Bioinformatics Programming: From Sequence Parsing to ORF Finding</h3>
+        <ul class="project-outcomes">
+          <li>Built an ORF finder spanning all six reading frames (3 forward + 3 reverse complement) with configurable start/stop codons, minimum length filtering, and edge case handling for dangling codons.</li>
+          <li>Developed a ProteinParams class computing molecular weight, theoretical isoelectric point (iterative charge bisection across pH 0–14), and molar/mass extinction coefficients from amino acid composition.</li>
+          <li>Implemented a tRNA unique subsequence finder using set-based comparison across all tRNA sequences, identifying the shortest unique substring at each position.</li>
+        </ul>
+        <p>Skills: OOP Sequence Analysis, FASTA/FASTQ, ORF Finding, Protein pI/MW, argparse</p>
+        <div class="project-overlay">
+          <p>A suite of Python tools for core bioinformatics tasks, built progressively across a full course. Includes a reusable sequenceAnalysis module with FASTA parsing, codon counting, and GC content analysis; a ProteinParams class computing molecular weight, isoelectric point, and extinction coefficients; an ORF finder spanning all six reading frames with configurable start/stop codons; a tRNA unique subsequence identifier using set-based comparison; and a DNA storage degradation simulator modeling seven damage types with literature-derived error rates. Each tool emphasizes clean OOP design and reusable module architecture.</p>
+          <a href="https://github.com/gacola" target="_blank" rel="noopener noreferrer" class="project-link">
+            <img src="assets/github-icon.png" alt="GitHub">
+            <img src="assets/external-link-icon.png" alt="External link">
+          </a>
+        </div>
+      </div>
+
+      <!-- Project 8: GCSR-Net -->
+      <div class="project-card">
+        <!--<img src="assets/ucsc_be_bordered.jpg" alt="GCSR-Net">-->
+        <h3>GCSR-Net: Transfer Learning for Few-Shot Image Classification</h3>
+        <ul class="project-outcomes">
+          <li>Achieved 87.64% test accuracy on EuroSAT satellite image classification using only 10 training samples per class, placing 3rd on the class Kaggle leaderboard out of ~50 students.</li>
+          <li>Designed a custom classifier head (Global Average Pooling → Channel Squeeze → Residual MLP) on top of a frozen pretrained ResNet-50 backbone, with progressive unfreezing of later layers.</li>
+          <li>Implemented a full training pipeline with data augmentation (rotation, flipping, color jitter, cutout), cosine annealing with warm restarts, and label smoothing.</li>
+        </ul>
+        <p>Skills: Transfer Learning, ResNet-50, PyTorch, Few-Shot Learning, Data Augmentation</p>
+        <div class="project-overlay">
+          <p>A transfer learning pipeline for satellite image classification under extreme data scarcity — just 10 labeled training samples per class. Built on a frozen pretrained ResNet-50 backbone with a custom classifier head incorporating Global Average Pooling, Channel Squeeze dimensionality reduction, and a Residual MLP block. Training pipeline includes aggressive data augmentation (random rotation, horizontal/vertical flips, color jitter, random erasing), cosine annealing with warm restarts, and label smoothing. Achieved 87.64% accuracy on EuroSAT and placed 3rd on the class Kaggle leaderboard out of approximately 50 students.</p>
+          <a href="https://github.com/gacola" target="_blank" rel="noopener noreferrer" class="project-link">
+            <img src="assets/github-icon.png" alt="GitHub">
+            <img src="assets/external-link-icon.png" alt="External link">
+          </a>
+        </div>
+      </div>
+
+      <!-- Project 9: ML Foundations -->
+      <div class="project-card">
+        <!--<img src="assets/ucsc_be_bordered.jpg" alt="ML Foundations">-->
+        <h3>Machine Learning Foundations: From Scratch to PyTorch</h3>
+        <ul class="project-outcomes">
+          <li>Implemented linear regression and logistic regression entirely from scratch in NumPy — hand-coded MSE/BCE loss, analytical gradients, and batch gradient descent — achieving < 0.05 MSE and > 85% accuracy on wine quality data.</li>
+          <li>Built 5-fold cross-validation with ensemble inference by averaging theta vectors across folds, with IQR outlier removal and z-score normalization.</li>
+          <li>Extended foundational concepts into PyTorch: feedforward neural networks as nn.Module, dropout regularization, activation function comparison (Sigmoid/Tanh/ReLU), and momentum-based SGD with velocity tracking.</li>
+        </ul>
+        <p>Skills: Linear/Logistic Regression, Gradient Descent, PyTorch nn.Module, Dropout, Momentum SGD</p>
+        <div class="project-overlay">
+          <p>A two-part progression through core machine learning: Part 1 implements linear and logistic regression entirely from scratch in NumPy, with hand-coded MSE and binary cross-entropy loss functions, analytical gradient computation, batch gradient descent, IQR-based outlier removal, z-score normalization, and 5-fold cross-validation with ensemble inference on a wine quality dataset. Part 2 rebuilds and extends those concepts in PyTorch — feedforward neural networks as nn.Module subclasses, manual gradient descent without autograd, side-by-side visualization of Sigmoid/Tanh/ReLU activation functions, dropout regularization, and momentum-based SGD with velocity tracking. Together they show the full arc from implementing everything by hand to using modern frameworks.</p>
+          <a href="https://github.com/gacola" target="_blank" rel="noopener noreferrer" class="project-link">
+            <img src="assets/github-icon.png" alt="GitHub">
+            <img src="assets/external-link-icon.png" alt="External link">
+          </a>
+        </div>
+      </div>
+
     </div>
   </section>
 

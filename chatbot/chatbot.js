@@ -41,7 +41,7 @@
     toggle.setAttribute('aria-expanded', 'false');
     toggle.innerHTML = `
       <span class="chatbot-toggle-icon">💬</span>
-      <span class="chatbot-toggle-tooltip">Chat with my AI assistant</span>
+      <span class="chatbot-toggle-tooltip">Let's Chat!</span>
     `;
 
     // Chat panel
@@ -54,7 +54,7 @@
     panel.innerHTML = `
       <div class="chatbot-header">
         <div class="chatbot-header-info">
-          <div class="chatbot-avatar">G</div>
+          <img class="chatbot-avatar" src="assets/favicon.png" alt="Gavin">
           <div class="chatbot-header-text">
             <h3>Gavin's Assistant</h3>
             <p>Ask me anything</p>
@@ -346,10 +346,12 @@
     const messageEl = document.createElement('div');
     messageEl.className = `chatbot-message ${role}`;
 
-    const avatar = role === 'user' ? '👤' : 'G';
+    const avatarHtml = role === 'user'
+      ? '<div class="chatbot-message-avatar">👤</div>'
+      : '<img class="chatbot-message-avatar" src="assets/favicon.png" alt="Gavin">';
 
     messageEl.innerHTML = `
-      <div class="chatbot-message-avatar">${avatar}</div>
+      ${avatarHtml}
       <div class="chatbot-message-content">${escapeHtml(content)}</div>
     `;
 
@@ -380,7 +382,7 @@
     const typingEl = document.createElement('div');
     typingEl.className = 'chatbot-message assistant';
     typingEl.innerHTML = `
-      <div class="chatbot-message-avatar">G</div>
+      <img class="chatbot-message-avatar" src="assets/favicon.png" alt="Gavin">
       <div class="chatbot-typing">
         <div class="chatbot-typing-dot"></div>
         <div class="chatbot-typing-dot"></div>
