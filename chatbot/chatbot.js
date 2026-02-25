@@ -13,10 +13,10 @@
     maxMessages: 20,
     maxInputLength: 750,
     starterPrompts: [
-      "What are Gavin's technical skills?",
-      "Tell me about his ML research",
-      "What makes him stand out?",
-      "What's his background?"
+      "What are your technical skills?",
+      "Tell me about your ML research",
+      "What makes you stand out?",
+      "What's your background?"
     ]
   };
 
@@ -56,7 +56,7 @@
         <div class="chatbot-header-info">
           <img class="chatbot-avatar" src="assets/favicon.png" alt="Gavin">
           <div class="chatbot-header-text">
-            <h3>Gavin's Assistant</h3>
+            <h3>Gav.ai</h3>
             <p>Ask me anything</p>
           </div>
         </div>
@@ -66,7 +66,7 @@
         <div class="chatbot-welcome">
           <div class="chatbot-welcome-icon">👋</div>
           <h4>Hi there!</h4>
-          <p>I'm an AI assistant that can tell you about Gavin's experience and skills. How can I help?</p>
+          <p>I'm an AI Gavin that can tell you about Gavin's experience and skills. What do you want to know?</p>
           <div class="chatbot-starters"></div>
         </div>
       </div>
